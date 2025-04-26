@@ -16,7 +16,7 @@
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \usepackage{longtable}
 
-\title{SongSwipe: Project Final Draft}
+\title{SongSwipe}
 \author{Christopher Coco, Nena Heng, Raj Ray, Anthony Simao, Katiana Sourn}
 
 \begin{document}
@@ -380,7 +380,7 @@ Over a short period of time, the Spotify API deprecates features randomly which 
 \quad \quad As mentioned, the Jest unit testing library was used for unit testing. Our unit tests were broken up into four different units: API endpoints, Spotify interactions, Spotify preview request, and utility functions. The API endpoint testing checked to see if each endpoint on our REST API responded with the correct status codes and body. Jest's mock functionality was used to mock the functions that returned data from Spotify's API. This allowed us to insert mock data with a similar structure to what was expected from Spotify's API to ensure correct data was returned when successful. For testing related to Spotify interactions, tests covered the functions that dealt with formatting requests and checking responses for any errors. This ensured that there were no errors from us in sending the requests. For testing the Spotify preview library, the test makes sure that the correct fetch is called to ensure that if the library is updated it still works as it needs to. For utility functions, testing was done to make sure those functions met their specification.
 
 \section{User Usage Metrics Collection}
-\quad One feature we added to our application to test usage efficiency is metric collection. Based on a toggle in the .env file for the project, metrics collection can be enabled. When enabled, whenever a user goes to edit a playlist a csv and text file will be created to append data to. The csv file will contain the song name, artist, album, the time to make a decision in seconds, and the decision made for all of the songs in the users playlist that they went through. The text file will contain the total amount of time it took for the user to go through the playlist. Having this data ensures that we have accurate metrics on how our application performed. These metrics were used in our usability testing to judge effectiveness.
+\quad One feature we added to our application to test usage efficiency is metric collection. Based on a toggle in the .env file for the project, metrics collection can be enabled. When enabled, whenever a user goes to edit a playlist a csv and text file will be created to append data to. The csv file will contain the song name, artist, album, the time to make a decision in seconds, and the decision made for all of the songs in the users playlist that they went through. The text file will contain the total amount of time it took for the user to go through the playlist. Having this data ensures that we have accurate metrics on how our application performed. These metrics were used in our usability testing to judge effectiveness. For collecting metrics for Spotify we made it easier by writing a Python script that waits for input to indicate a decision and keeps track of the time between decisions. When using this script the decision was logged once the user went to the next song. This data was then written to a csv file. 
 
 \section{Usability Testing}
 \quad We have reached a point in our project where we can begin testing whether our project achieves the function of managing Spotify playlists in an optimal, time efficient manner.
@@ -446,16 +446,75 @@ Someone who plays their playlist on shuffle and skips songs they no longer like,
     \end{enumerate}
 
     Both Spotify UI and our SongSwipe UI have text to show the song and artist, which makes the selection accessible both audibly and visually.
+
+\subsubsection*{Method B}
+
+For this method, we wanted to targest the other use case of our application going through a friends playlist and selecting songs that you like.
+
+Both Spotify UI and our SongSwipe UI have text to show the song and artist, which makes the selection accessible both audibly and visually.
     
+Before beginning these tests, the participants had the use cases of our application explained along with their task. Music for the playlists were also tailored to be music that the participant would not know.
+
+    \textbf{Controlled Environment:}
+    
+    \begin{itemize}
+    \item \textbf{Playlist:} Two different playlists with 50 songs that were all different.
+    \item \textbf{Task Assigned:} Listen to music for however long you choose and make a decision if you like it or not.
+    \end{itemize}
+
+    \textbf{Spotify Testing:} 
+    
+    \begin{enumerate}
+        \item Play the playlist on shuffle mode.
+        \item List to song for amount of time that is up to the user.
+        \item After decision is made:
+            \begin{itemize}
+                \item If they like it: Add playlist like shown in Fig.~\ref{fig:spotify_diagram}
+                \item If they did not like it: Skip song
+            \end{itemize}
+    \end{enumerate}
+
+    \textbf{SongSwipe Testing:}
+    
+    \begin{enumerate}
+        \item Listen to the preview of song for however long.
+        \item After listening:
+            \begin{itemize}
+                \item Swipe right if they liked the song
+                \item Swipe left if they disliked the song
+            \end{itemize}
+    \end{enumerate}
+
 \section{Reporting Results}
 
 \subsection*{Tables}
+Method A
 \begin{longtable}{lllll}
-Tester Name & Testing Method & Spotify Subscription & Spotify Time & SongSwipe Time \\
+Tester Name & Spotify Subscription & Spotify Time & SongSwipe Time \\
 \hline
-TesterA & Method A & Free User & $\leq$ 3 hours 2 minutes & 6 Minutes 25 Seconds \\
-TesterB & Method A & Spotify Premium & 42 minutes and 5 Seconds & 13 Minutes and 38 Seconds \\
+TesterA & Free User & $\leq$ 3 hours 2 minutes & 6 Minutes 25 Seconds \\
+TesterB & Spotify Premium & 42 minutes and 5 Seconds & 13 Minutes and 38 Seconds \\
 \end{longtable}
+
+% FIX IT BEING INDENTED
+Method B
+
+\begin{longtable}{lllll}
+    Tester Name & Spotfy Time & SongSwipe Time & Spotify Average & SongSwipe Average \\
+    \hline
+    TesterA & 13.03 minutes & 8.1 minutes & 15.64 seconds & 9.72 seconds \\
+    TesterB & 5.92 minutes & 4.08 minutes & 5.76 seconds & 7.1 seconds \\
+\end{longtable}
+
+% Same with the method b thing
+Figures 
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=6in]{./method_b_statistics.png}
+    \caption{Statistics for Method B. Includes time per song, total songs based on decision, and total and average times. Generated using Matplotlib \cite{Matplot}.}
+    \label{fig:methodbstats}
+  \end{figure}
 
 \subsection{Limitations}
 When it comes to testing, there will always be some form of limitations. In our project, to scope the most data we can get, we had all the members conduct their own testing with their own procedure, and by doing this,s we would have different results based on the guidelines in their respective procedures.
@@ -470,11 +529,25 @@ Spotify limits the number of skips a free user can have, about 6 skips every hou
 \end{center}
 
 \subsection{Discussion}
+
+\subsection*{Method A}
 Based on our experiment, we had 75 songs in our playlist, which had a total listen time of 4 Hours and 38 Minute,s and we removed 9 songs from that playlist. \\
     
 Using our Estimation equations above (1 and 2), we estimated that it would take 37 Minutes and 57 Seconds for Spotify and 19 Minutes and 54 Seconds for SongSwipe. This has a time reduction of 47.5\%. It is observed that the more songs are in a playlist, the time spent on playlist management is significantly reduced.\\
     
-When looking at our actual results from user testing, we see that TesterA has about a 95\% time reduction meanwhile TesterB has a 67.8\% time reduction. This shows that our application goes beyond our expectations by showing a time reduction of more than 50 \% and even more when it comes to free Spotify users, who have harsh limitations on song skips.
+When looking at our actual results from user testing, we see that TesterA has about a 95\% time reduction meanwhile TesterB has a 67.8\% time reduction. This shows that our application goes beyond our expectations by showing a time reduction of more than 50 \% and even more when it comes to free Spotify users, who have harsh limitations on song skips. \\
+
+\subsection*{Method B}
+Based on the experiments for method B, it can be seen that SongSwipe has a clear advantage when it comes to the time spent. \\
+
+% Maybe include the formula for the percentage difference.
+Adding together the total times for both testers for Method B makes the percentage difference in total time 43\%. Doing the same for average time brings the percentage difference to 65\%. This shows that for going through new music quickly, SongSwipe can aid in that process and lower the time spent. \\
+
+Some other trends were noticed in testing with the users. For both testers, it was noticed that there was visable frustration when messing up an input on Spotify's client and sometimes getting annoyed when they could not find the playlist to add the song to. While using SongSwipe this was not observed.
+
+Another trend that happened was that the testers did not really scrub through the song at all while using Spotify. This might have been due to them doing SongSwipe first which shows that there is more of a quick nature to it. More testing could have been done where Spotify was used first to see if this made any impact at all.
+
+% Maybe a conclusions section
 
 \section{Lessons Learned}
 
@@ -555,6 +628,8 @@ After receiving peer reviews, we revised our project proposal. Our peers stresse
 \bibitem{expressjs} ExpressJS, Available \url(https://expressjs.com/)
 
 \bibitem{Jest} Jest, Available \url(https://jestjs.io)
+
+\bibitem{Matplot} Matplotlib, Available \url{https://matplotlib.org/}
 
 
 \end{thebibliography}
