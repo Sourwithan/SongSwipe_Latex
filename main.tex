@@ -274,7 +274,7 @@ While Spotify is a major platform for music streaming, its playlist management f
 \begin{figure}[ht]
   \centering
   \captionsetup{justification=centering}
-  \includegraphics[width=5in,scale=4]{./ui-draft.png}
+  \includegraphics[width=6in,scale=5]{./ui-final.png}
   \caption{Preview of the UI for the playlist selection and card swiping. Left is playlists page, middle is the card swiping screen and the right is the staging area. }
   \label{fig:ui_preview}
 \end{figure}
@@ -383,7 +383,7 @@ Over a short period of time, the Spotify API deprecates features randomly which 
 \quad One feature we added to our application to test usage efficiency is metric collection. Based on a toggle in the .env file for the project, metrics collection can be enabled. When enabled, whenever a user goes to edit a playlist a csv and text file will be created to append data to. The csv file will contain the song name, artist, album, the time to make a decision in seconds, and the decision made for all of the songs in the users playlist that they went through. The text file will contain the total amount of time it took for the user to go through the playlist. Having this data ensures that we have accurate metrics on how our application performed. These metrics were used in our usability testing to judge effectiveness. For collecting metrics for Spotify we made it easier by writing a Python script that waits for input to indicate a decision and keeps track of the time between decisions. When using this script the decision was logged once the user went to the next song. This data was then written to a csv file. 
 
 \section{Usability Testing}
-\quad We have reached a point in our project where we can begin testing whether our project achieves the function of managing Spotify playlists in an optimal, time efficient manner.
+\quad To ensure our project worked and solved the proposed problem, we ran two different types of test to over the main two use cases of our application: managing your own Spotify playlists and copying another user's playlist.
 
 \subsection{Goal}
 \quad Our goal for this testing is to demonstrate not only that the Spotify UI is not optimal and time consuming when it comes to playlist management and that our product, but also that SongSwipe will reduce the time it takes to manage a playlist by at least 50\%.
@@ -507,7 +507,9 @@ Method B
 \end{longtable}
 
 % Same with the method b thing
-Figures 
+\subsection*{Figures}
+
+Fig~\ref{fig:methodbstats}
 
 \begin{figure}[ht]
     \centering

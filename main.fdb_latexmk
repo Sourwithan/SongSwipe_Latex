@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1745628499.87021 "/home/cjcocokrisp/code/SongSwipe_Latex/main.tex" "main.pdf" "main" 1745628501.39347 0
-  "/home/cjcocokrisp/code/SongSwipe_Latex/main.tex" 1745628499.68162 54894 16f48786c8c0552da143c376b7640964 ""
+["pdflatex"] 1745779348.6702 "/home/cjcocokrisp/code/SongSwipe_Latex/main.tex" "main.pdf" "main" 1745779350.04537 0
+  "/home/cjcocokrisp/code/SongSwipe_Latex/main.tex" 1745779348.42014 54982 fd1ee12f1cab4abeb90e96eba858ba7f ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1742685315 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1742685315 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1742685315 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -104,15 +104,15 @@
   "flow1.png" 1745624022.94679 23358 2ad747fa4017c6a31314c54f450c6de5 ""
   "flow2.png" 1745624022.94679 17342 fdc1e108d7a730bc45bc270acf0272af ""
   "json2.png" 1745624022.95679 67977 ef817c3ef24b27b1dad4fc2499219bd9 ""
-  "main.aux" 1745628501.34163 8363 f85d66a1d6a28d313b95fcb54821e766 "pdflatex"
-  "main.out" 1745628501.34163 3947 c47c69f0ccfeb001654f11e3352ce288 "pdflatex"
-  "main.tex" 1745628499.68162 54894 16f48786c8c0552da143c376b7640964 ""
+  "main.aux" 1745779350.00012 8363 3ddac33a50afc3bfa8a90dfa03638ca0 "pdflatex"
+  "main.out" 1745779350.00012 3947 c47c69f0ccfeb001654f11e3352ce288 "pdflatex"
+  "main.tex" 1745779348.42014 54982 fd1ee12f1cab4abeb90e96eba858ba7f ""
   "method_b_statistics.png" 1745626800.8646 139830 0abf6a9fef36615d301bb21e139006b6 ""
   "playmixifyss.png" 1745624022.95679 107057 a2a0ec5aa028d659ad2d60018adb6d1f ""
   "skileyss.png" 1745624022.97012 352384 450590fbc9e8fbf39bc11a3f2e854251 ""
   "spotify_diagram.png" 1745624022.98346 2932158 67e08ef3aa28f1688ef4bd3a3a120062 ""
   "swipefyss.png" 1745624022.98346 267368 f0455cf5f638186e78741679481fbdd8 ""
-  "ui-draft.png" 1745624022.98679 1775381 53d76f2076ed8a401d2ae6a8a6abf62c ""
+  "ui-final.png" 1745778502.37726 1380957 3127400df91428df86a0eacf1e6c92bf ""
   (generated)
   "main.aux"
   "main.log"
