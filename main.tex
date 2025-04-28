@@ -15,6 +15,7 @@
 \usepackage{enumitem}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \usepackage{longtable}
+\usepackage{appendix}
 
 \title{SongSwipe}
 \author{Christopher Coco, Nena Heng, Raj Ray, Anthony Simao, Katiana Sourn}
@@ -113,8 +114,9 @@ One issue with Swipefy for Spotify is that it is only available as a mobile app.
 \subsection{Skiley.net}
 \quad Skiley.net is a platform that essentially extends the Spotify UI by including numerous features such as song discovery and playlist management. Furthermore, using the Spotify API they replicate the Spotify UI by showing what song you’re listening to, playback history, and the lyrics,  and extend their UI by including additional features such as providing music videos, and similar song recommendations based on the current song you are listening to, and facts associated with the song. They also offer playlist management via deduplication which removes duplicates found in the playlist. \cite{skiley} \\
 
-Although Skiley.net extends the Spotify UI in terms of additional information, they limit playlist management to 3 edits of any of the free service options they provide and offer more services behind a one-time subscription. As Spotify requires consumers to pay a monthly subscription service to remove ads when playing music, it would seem redundant to purchase an external Spotify tool for playlist management and to remove ads from their platform. Furthermore, they provide different ways to organize your playlist, but there still is a lack of an efficient playlist revision tool.\\
-SongSwipe has its main focus on revising the playlist revision process to reduce the amount of time it takes revise a playlist, which although Skiley.net has other amazing features, it does not offer the same service we provide.
+Although Skiley.net extends the Spotify UI in terms of additional information, they limit playlist management to 3 edits of any of the free service options they provide and offer more services behind a one-time subscription. As Spotify requires consumers to pay a monthly subscription service to remove ads when playing music, it would seem redundant to purchase an external Spotify tool for playlist management and to remove ads from their platform. Furthermore, they provide different ways to organize your playlist, but there still is a lack of an efficient playlist revision tool. \\
+\\
+\quad SongSwipe has its main focus on revising the playlist revision process to reduce the amount of time it takes revise a playlist, which although Skiley.net has other amazing features, it does not offer the same service we provide.
 
 \begin{figure}[ht]
   \centering
@@ -126,8 +128,14 @@ SongSwipe has its main focus on revising the playlist revision process to reduce
 While Spotify is a major platform for music streaming, its playlist management features fail to meet the needs of its users. The current process for managing playlists can be tedious, leading users to create new playlists repeatedly or seek external solutions. Tools like Spotify Dedup, Swipefy for Spotify, Skiley.net, and Playmixify have attempted to address these shortcomings by leveraging the Spotify API to provide additional functionalities such as deduplication, song discovery, and playlist synchronization. However, these tools focus on niche aspects of playlist management and lack of comprehensive, and interactive experience users desire. Our solution will be a discernible tool against other external Spotify tools by offering a free, accessible web app that not only simplifies playlist management but also makes the process more engaging and user-friendly.
  
 
-\section{Why Our Solution Is Better}
-\quad Our solution differs from the existing solutions through a highly navigable and intuitive user interface. The UI is inspired by dating applications like Tinder. The left and right swiping motions make it easier to select which songs you want to keep or remove. Swiping left indicates that you want to remove the song from the playlist, meanwhile swiping right indicates that you want to keep the song in the playlist. Comparing this process to the mobile Spotify interface you need to first tap on a three-dot icon then tap on remove from playlist. Depending on how you tap the screen and finger size you might miss the button and start the song or just have nothing happen. Swiping reduces room for error and decreases the amount of input/time that is needed to remove a song from your playlist.
+\section{Our Solution}
+\quad The function of our application mainly revolve around managing playlists on Spotify. The user signs into their account so that the application has permission to access user information such as their playlists. This also grants the application permission to manage the user's playlists as well. After selecting a playlist, the user will be brought to a screen that resembles interfaces of dating apps. SongSwipe's main screen has some buttons for playback functionality as well as information about the song including: song title, artist info, and album cover art. When a song is displayed, it will start playing. The user can swipe left on the song if they don't like it, and right if they do. The swiping motions make it easier to select which songs you want to keep or remove.\\
+
+\quad The two playback buttons control both playing and pausing, as well as restarting the current songs preview.  There is also a button to go to the staging area, where all changes live before being commited to Spotify. Each decision the user makes is tracked and saved to the staging area which shows all changes that have been made to the playlist. During or after a user is done going through a playlist, they can see an overview of their changes in this area and then choose to revert any recent changes they have made. After reviewing the staging area and confirming the changes, the application automatically updates the user's Spotify playlist. \\
+
+\quad Another major function of our application is copying playlists from other users. Currently, there is no easy way to copy another user’s playlists on the mobile version of Spotify. Our application improves user satisfaction by allowing consumers to search for a user to copy a playlist from or providing the playlist URL if the playlist is public. Once the consumer copies a playlist, they can use the functions just described to help manage the playlist and adjust it to their liking.
+
+\quad Our solution differs from the existing solutions through a highly navigable and intuitive user interface. The UI is inspired by dating applications like Tinder. This single swipe replaces what would be three seperate button presses on the Spotify app.  It reduces room for error and decreases the amount of input/time that is needed to remove a song from your playlist.
 \\
 
 \quad Being able to play the song’s preview before deciding whether to remove or keep it, is another major improvement that our app achieves. Normally, a user would have to listen to the song from the beginning. However, sometimes songs can have a long introduction before they get to the part where you would be able to determine if it’s worth keeping. The preview for a song on Spotify showcases a part of the song that could be considered the best part of it and playing this preview helps Spotify consumers determine whether they like the song or not in a time-effective manner; rather than have them listen to the whole song from start to finish. This feature helps Spotify consumers manage their playlists in an optimal manner.
@@ -152,13 +160,13 @@ While Spotify is a major platform for music streaming, its playlist management f
 
 \quad Furthermore, a feature that makes SongSwipe distinguishable from other external Spotify tools is the ability to copy a friend’s playlist, go through the songs in that playlist, and filter them. Currently, the only way to copy another user’s playlist on Spotify is to either save it or use the shortcut CTRL + A, then copy all of the songs to your playlist. There are two major issues with these solutions. For saving, this is not creating a copy of the other user’s playlist but more of saving their playlist to your library so you can easily have access to it. You cannot make changes as well unless they have invited you as a collaborator. The issue with selecting all shortcuts is that it is only available on the desktop Spotify client and not mobile. This is significant because the majority of Spotify users are mobile users, listening on the go, and limits people who primarily use Spotify on their mobile devices. Our solution copies the songs from a user’s playlist into your own so you can use our management features to keep and remove songs. Overall, these two major features help improve on two places where Spotify falls short.
 
-\section{What SongSwipe Does}
+% \section{What SongSwipe Does}
 
-\quad The functions of our application mainly revolve around managing playlists on Spotify. The user signs into their account so that the application has permission to access user information such as their playlists. This also grants the application permission to manage the user's playlist(s) as well. After selecting a playlist, the user will be brought to a screen that resembles Tinder's main page. SongSwipe's main screen has some buttons for functionality as well as information about the song including: song title, album art, and album cover art. \\
+% \quad The functions of our application mainly revolve around managing playlists on Spotify. The user signs into their account so that the application has permission to access user information such as their playlists. This also grants the application permission to manage the user's playlist(s) as well. After selecting a playlist, the user will be brought to a screen that resembles Tinder's main page. SongSwipe's main screen has some buttons for functionality as well as information about the song including: song title, album art, and album cover art. \\
 
-\quad The buttons include the regular functionality for keeping and removing a song, as well as an extra button for undoing the last action(s) to allow users to go back if they made a mistake. If a user selects the "keep song" button or swipes right on the song it will be kept in the playlist. Conversely, if they hit the "remove song" button or swipe left it will be removed from the playlist. There is also be a button to check the staging area. Each decision the user makes is tracked and saved to the staging area which shows all changes that have been made to the playlist. During or after a user is done going through a playlist, they can see an overview of their changes in this area and then choose to revert any recent changes they have made. After reviewing the staging area and confirming the changes, the application automatically updates the user's Spotify playlist. \\
+% \quad The buttons include the regular functionality for keeping and removing a song, as well as an extra button for undoing the last action(s) to allow users to go back if they made a mistake. If a user selects the "keep song" button or swipes right on the song it will be kept in the playlist. Conversely, if they hit the "remove song" button or swipe left it will be removed from the playlist. There is also be a button to check the staging area. Each decision the user makes is tracked and saved to the staging area which shows all changes that have been made to the playlist. During or after a user is done going through a playlist, they can see an overview of their changes in this area and then choose to revert any recent changes they have made. After reviewing the staging area and confirming the changes, the application automatically updates the user's Spotify playlist. \\
 
-\quad Another major function of our application is copying playlists from other users. Currently, there is no easy way to copy another user’s playlists on the mobile version of Spotify. Our application improves user satisfaction by allowing consumers to search for a user to copy a playlist from or providing the playlist URL if the playlist is public. Once the consumer copies a playlist, they can use the functions just described to help manage the playlist and adjust it to their liking.
+% \quad Another major function of our application is copying playlists from other users. Currently, there is no easy way to copy another user’s playlists on the mobile version of Spotify. Our application improves user satisfaction by allowing consumers to search for a user to copy a playlist from or providing the playlist URL if the playlist is public. Once the consumer copies a playlist, they can use the functions just described to help manage the playlist and adjust it to their liking.
 
 % \section{High Level Overview}
 % \quad SongSwipe's main priority is to enable users to seamlessly edit and organize their playlists through an intuitive, Tinder-style interface. By integrating with the Spotify Web API, the app allows users to authenticate via OAuth 2.0, fetch their playlists, and modify them by swiping left to remove songs or right to keep them. Changes are tracked in a staging area before being applied, giving users full control over their edits. Additionally, the app makes it easy to copy playlists from other users by searching for public playlists or entering a playlist URL. Songswipe will keep its main focus on usability and efficiency, to ensure a smooth and engaging experience for managing Spotify playlists.
@@ -313,7 +321,7 @@ While Spotify is a major platform for music streaming, its playlist management f
 \quad The main technologies used for the backend are Typescript, ExpressJS \cite{expressjs}, and the Spotify API \cite{Spotify_docs}. Typescript was chosen due to its static typing. This minimized type errors with the various data that was worked with. For interacting with the Spotify API, we originally intended to use Spotify's Typescript SDK. However, it was not compatible with the front-end stack that we decided. The library was built to work with technologies like React where the application can be rendered on the server. Our front-end does not support this so we needed to develop a Representative State Transfer (REST) API that acts as a wrapper for the Spotify API. This allows the front-end client to interact with the Spotify API by providing the authorization access token to the REST API endpoints that were developed. It was developed using ExpressJS, a web application framework, that is useful for building REST APIs. The Spotify API as mentioned was used to interact with data on Spotify. One feature that was deprecated from Spotify's API was the ability to get the link to a song's preview. A library \cite{Spotify_preview_url} provided by GitHub user Rexdotsh, provides a workaround for this by extracting the link from Spotify's embed player HTML.
 
 \subsection{Other technologies}
-\quad Other technologies that we used involve things related to hosting and unit testing. For a hosting service, we chose Netlify \cite{Netlify}. This is a web hosting platform with a generous free tier and easy integration with GitHub where our repository is hosted. It handles continuous delivery which removes the need for us to configure a deployment pipeline. Netlify also has a generous free tier which provides 100 GB of bandwidth and 300 build minutes. Netlify's function service \cite{Netlify_functions} was also used. This service allowed the back-end REST API to be hosted in a server-less manner. Netlify functions were also included in the free tier which helps being able to host the site for free. If the application sees success we may need to pivot to a better hosting solution. For unit testing, the Jest library was used. This library has support for both Javascript and Typescript along with supporting useful features like mocks. Mocks allowed for testing of API endpoints with mock data. Our unit tests were also integrated with our GitHub repository. Whenever a pull request was opened, it could not be merged if any of the unit tests fail. 
+\quad Other technologies that we used involve things related to hosting and unit testing. For a hosting service, we chose Netlify \cite{Netlify}. This is a web hosting platform with a generous free tier and easy integration with GitHub where our repository is hosted. It handles continuous delivery which removes the need for us to configure a deployment pipeline. It also provides 100 GB of bandwidth and 300 build minutes. Netlify's function service \cite{Netlify_functions} was also used. This service allowed the back-end REST API to be hosted in a server-less manner. Netlify functions were also included in the free tier which helps being able to host the site for free. If the application sees success we may need to pivot to a better hosting solution.  We used the Jest library for our Javascript unit testing,it has support for both Javascript and Typescript along with useful features like mocks. Mocks allowed for testing of API endpoints with mock data. Our unit tests were also integrated with our GitHub repository. Whenever a pull request was opened, it could not be merged if any of the unit tests fail. 
 %\subsection{Frontend Stack}
 %\quad The frontend stack will consist of HTML, CSS, and JQuery. It is a simple, yet effective stack that will allow us to build an effective user interface. Using HTML and web application frameworks will allow SongSwipe to be accessed on all platforms. Our frontend stack will change slightly as the project progresses, as we may add some component libraries or CSS frameworks like Tailwind if we find that they would benefit the usability and look of the UI. \\
 
@@ -323,70 +331,42 @@ While Spotify is a major platform for music streaming, its playlist management f
 %\subsection{Other Technologies}
 %\quad Netify is a web hosting platform that will host our site. This service allows the app to be easily deployed due to its easy integration with Github, which is used for version control. It also handles continuous delivery, which is beneficial as the hosting service will be integrated with it; removing the need to configure a deployment pipeline. Netify’s free tier is generous and provides up to 100 GB of bandwidth and 300 build minutes \cite{Netify_pricing}. It is perfect for SongSwipe's current state however, if the application seeks wide-scale success then there will be a transition to a scaleable service such as the Cloud, to manage traffic.
 
-\section{Contributions}
-\begin{itemize}
-     \item \textbf{Anthony Simao:}
-        \begin{itemize}
-            \item Front-end development, HTML, and CSS for page styling and basic animations.
-            \item Back-end development, JavaScript, and jQuery for basic event handling and animations.
-        \end{itemize}
-    \item \textbf{Nena Heng:}
-        \begin{itemize}
-            \item Front-end development, focusing on CSS styling to ensure a user-friendly GUI.
-        \end{itemize}
-    \item \textbf{Christopher Coco:}
-        \begin{itemize}
-            \item Back-end development in Typescript involves Spotify API calls and credential management, unit testing, and deployment
-        \end{itemize}
-    \item \textbf{Katiana Sourn:}
-        \begin{itemize}
-            \item Back-end development regarding local storage, expected behavior configuration, and back-end UI handling
-            \item Assisting with Spotify API calls
-        \end{itemize}
-    \item \textbf{Raj Ray:}
-        \begin{itemize}
-            \item QA Tester
-        \end{itemize}      
-\end{itemize}
+\section{Project Challenges}
+\quad The main challenges that we had faced was working around the Spotify API which could prove to be tedious at times.  We made use of an external workaround used to get Spotify preview URLs as they no longer support that function by default.  We were initially worried Spotify would deprecate a core feature, however this did not happen.
 
+% \quad The main risks of SongSwipe stem from the potential deprecation of the Spotify API and the risk of the server host, Netlify, changing its free-to-use terms. These updates happen all of the time, meaning if SongSwipe were using a deprecated function, it would break the app. Not only that but if Netify ceases its free-to-use terms, the app will be unavailable. Furthermore, if someone uses the application after a security fix it might put the user at risk of a major security vulnerability.  \\
 
-\section{Project Risks}
-\quad The main risks of SongSwipe stem from the potential deprecation of the Spotify API and the risk of the server host, Netlify, changing its free-to-use terms. These updates happen all of the time, meaning if SongSwipe were using a deprecated function, it would break the app. Not only that but if Netify ceases its free-to-use terms, the app will be unavailable. Furthermore, if someone uses the application after a security fix it might put the user at risk of a major security vulnerability.  \\
+% Over a short period of time, the Spotify API deprecates features randomly which can cause issues during development. Whereas if a feature is used for SongSwipe's core functionality, then the app will break. For example last November, a few features were removed from the API which include: related artists, recommendations, audio features, audio analysis, access to algorithmically generated and Spotify-owned editorial playlists, and 30-second preview URLs in ‘muli-get’ responses \cite{Spotify_api_removal}. There is also a chance that the current features of the Spotify API could have bugs. For example, a bug with the preview urls made it always return a null value instead of what was needed \cite{Spotify_preview_url}. If a bug is encountered using the API, with no current solution to solving the bug, that would result in dawdling which will cut back on the timeline of the our milestones. Deprecation will always be a huge risk in development that could affect the application's usability. Therefore it is SongSwipe's high priority to always read API updates and documentation.
 
-Over a short period of time, the Spotify API deprecates features randomly which can cause issues during development. Whereas if a feature is used for SongSwipe's core functionality, then the app will break. For example last November, a few features were removed from the API which include: related artists, recommendations, audio features, audio analysis, access to algorithmically generated and Spotify-owned editorial playlists, and 30-second preview URLs in ‘muli-get’ responses \cite{Spotify_api_removal}. There is also a chance that the current features of the Spotify API could have bugs. For example, a bug with the preview urls made it always return a null value instead of what was needed \cite{Spotify_preview_url}. If a bug is encountered using the API, with no current solution to solving the bug, that would result in dawdling which will cut back on the timeline of the our milestones. Deprecation will always be a huge risk in development that could affect the application's usability. Therefore it is SongSwipe's high priority to always read API updates and documentation.
+% \section{Milestones}
+% \quad For our project, we plan to split up our project into milestones that will be accomplished on a weekly basis starting on February 21st. These will essentially mimic sprints and at the start of each sprint we will break each milestone into the parts that need to be completed. We have seperated milestones between front and back end. This schedule is subject to change depending on issues that we run into during development. 
 
-\section{Milestones}
-\quad For our project, we plan to split up our project into milestones that will be accomplished on a weekly basis starting on February 21st. These will essentially mimic sprints and at the start of each sprint we will break each milestone into the parts that need to be completed. We have seperated milestones between front and back end. This schedule is subject to change depending on issues that we run into during development. 
-
-\begin{itemize}
-    \item \textbf{April 4th, 2025:}
-        \begin{itemize}
-            \item \textbf{Frontend:} Make homepage and a playlist search bar.
-            \item \textbf{Backend:} Pull preview URLs for songs and populate card swiping screen.
-        \end{itemize}
-    \item \textbf{April 11th, 2025:}
-        \begin{itemize}
-            \item \textbf{Frontend:} Adjustments to make app compatible on desktop.
-            \item \textbf{Backend:} Allow for writing to Spotify playlists. 
-        \end{itemize}
-    \item \textbf{April 18th, 2025:}
-        \begin{itemize}
-            \item Final submission preparations and usability testing.
-        \end{itemize}
-    % \item \textbf{May 2nd, 2025} - it will probably be due by this idk if we should have it
-\end{itemize}
+% \begin{itemize}
+%     \item \textbf{April 4th, 2025:}
+%         \begin{itemize}
+%             \item \textbf{Frontend:} Make homepage and a playlist search bar.
+%             \item \textbf{Backend:} Pull preview URLs for songs and populate card swiping screen.
+%         \end{itemize}
+%     \item \textbf{April 11th, 2025:}
+%         \begin{itemize}
+%             \item \textbf{Frontend:} Adjustments to make app compatible on desktop.
+%             \item \textbf{Backend:} Allow for writing to Spotify playlists. 
+%         \end{itemize}
+%     \item \textbf{April 18th, 2025:}
+%         \begin{itemize}
+%             \item Final submission preparations and usability testing.
+%         \end{itemize}
+%     % \item \textbf{May 2nd, 2025} - it will probably be due by this idk if we should have it
+% \end{itemize}
 
 \section{Unit Testing}
-\quad \quad As mentioned, the Jest unit testing library was used for unit testing. Our unit tests were broken up into four different units: API endpoints, Spotify interactions, Spotify preview request, and utility functions. The API endpoint testing checked to see if each endpoint on our REST API responded with the correct status codes and body. Jest's mock functionality was used to mock the functions that returned data from Spotify's API. This allowed us to insert mock data with a similar structure to what was expected from Spotify's API to ensure correct data was returned when successful. For testing related to Spotify interactions, tests covered the functions that dealt with formatting requests and checking responses for any errors. This ensured that there were no errors from us in sending the requests. For testing the Spotify preview library, the test makes sure that the correct fetch is called to ensure that if the library is updated it still works as it needs to. For utility functions, testing was done to make sure those functions met their specification.
+\quad \quad We used Jest for our unit tests.  They were broken up into four different units: API endpoints, Spotify interactions, Spotify preview request, and utility functions. The API endpoint testing checked to see if each endpoint on our REST API responded with the correct status codes and body. We used Jest's mock functionality to mock data returned from Spotify's API. This allowed us to insert mock data with a similar structure to what was expected from Spotify's API to ensure correct data was returned when successful. For testing related to Spotify interactions, tests covered the functions that dealt with formatting requests and checking responses for any errors. This ensured that there were no errors from us in sending the requests. For testing the Spotify preview library, the test makes sure that the correct fetch is called to ensure that if the library is updated it still works as it needs to. We also created tests for our utility functions, such as creating random keys when calling Spotify API.
 
 \section{User Usage Metrics Collection}
-\quad One feature we added to our application to test usage efficiency is metric collection. Based on a toggle in the .env file for the project, metrics collection can be enabled. When enabled, whenever a user goes to edit a playlist a csv and text file will be created to append data to. The csv file will contain the song name, artist, album, the time to make a decision in seconds, and the decision made for all of the songs in the users playlist that they went through. The text file will contain the total amount of time it took for the user to go through the playlist. Having this data ensures that we have accurate metrics on how our application performed. These metrics were used in our usability testing to judge effectiveness. For collecting metrics for Spotify we made it easier by writing a Python script that waits for input to indicate a decision and keeps track of the time between decisions. When using this script the decision was logged once the user went to the next song. This data was then written to a csv file. 
+\quad One feature we added to our application to test usage efficiency is metric collection. Based on a toggle in the .env file for the project, metrics collection can be enabled. When enabled, whenever a user goes to edit a playlist a csv and text file will be created to append data to. The csv file will contain the song name, artist, album, the time to make a decision in seconds, and the decision made for all of the songs in the users playlist that they went through. The text file will contain the total amount of time it took for the user to go through the playlist. Having this data ensures that we have accurate metrics on how our application performed, which were used to judge effectiveness. For collecting metrics for Spotify we made it easier by writing a Python script that waits for input to indicate a decision and keeps track of the time between decisions. When using this script the decision was logged once the user went to the next song. This data was then written to a csv file. 
 
 \section{Usability Testing}
-\quad To ensure our project worked and solved the proposed problem, we ran two different types of test to over the main two use cases of our application: managing your own Spotify playlists and copying another user's playlist.
-
-\subsection{Goal}
-\quad Our goal for this testing is to demonstrate not only that the Spotify UI is not optimal and time consuming when it comes to playlist management and that our product, but also that SongSwipe will reduce the time it takes to manage a playlist by at least 50\%.
+\quad To validate our project and its ability to solve the proposed problem, we conducted two types of tests, each targeting one of the application's primary use cases: managing personal Spotify playlists and copying playlists from other users. Our goal for this testing is to directly compare the same task performed with both the Spotify UI, as well as SongSwipes. In our individual unmeasured testing, we could feel the improvement, however we wanted to quantify it.
 
 \subsection{Estimation}
 \quad As reviewed previously in our presentation, we decided to give an estimation of our product and how it could save you time. \\
@@ -498,7 +478,6 @@ TesterB & Spotify Premium & 42 minutes and 5 Seconds & 13 Minutes and 38 Seconds
 
 % FIX IT BEING INDENTED
 Method B
-
 \begin{longtable}{lllll}
     Tester Name & Spotfy Time & SongSwipe Time & Spotify Average & SongSwipe Average \\
     \hline
@@ -559,13 +538,40 @@ We also improved a lot at sharing our ideas. Writing multiple papers throughout 
 
 For technical lessons learned, we learned a lot about designing a web application without the more modern tools that are typically used today. This was a nice change of pace and made us think about challenges that are typically solved with the libraries. An example of this would be routing; instead of using a nice routing library, we had to do routing ourselves and use pattern matching to make sure that the application would behave the same if it was being run locally or on a hosting service. We also learned a lot about OAuth and having to manage the lifetimes of authorization tokens due to not being able to utilize the Spotify Typescript SDK. This also allowed us to work more with REST APIs and design endpoints to interact with Spotify.
 
+% Start the appendix
+\begin{appendices}
+    \renewcommand{\thesection}{Appendix \Alph{section}:}
+\section{Contributions}
+\begin{itemize}
+     \item \textbf{Anthony Simao:}
+        \begin{itemize}
+            \item Front-end development, HTML, and CSS for page styling and basic animations.
+            \item Back-end development, JavaScript, and jQuery for basic event handling and animations.
+        \end{itemize}
+    \item \textbf{Nena Heng:}
+        \begin{itemize}
+            \item Front-end development, focusing on CSS styling to ensure a user-friendly GUI.
+        \end{itemize}
+    \item \textbf{Christopher Coco:}
+        \begin{itemize}
+            \item Back-end development in Typescript involves Spotify API calls and credential management, unit testing, and deployment
+        \end{itemize}
+    \item \textbf{Katiana Sourn:}
+        \begin{itemize}
+            \item Back-end development regarding local storage, expected behavior configuration, and back-end UI handling
+            \item Assisting with Spotify API calls
+        \end{itemize}
+    \item \textbf{Raj Ray:}
+        \begin{itemize}
+            \item QA Tester
+        \end{itemize}      
+\end{itemize}
 \section{Feedback}
 \quad We received several important pieces of feedback from our instructor to improve the goals and specifications of the project. The UI functionality and button pressing have been addressed in our proposal in terms of explaining what each button is and does exactly as that was not clear before. The project risk of using the Spotify API now includes clear-cut examples that occurred in recent months, such as features that were added and removed. The described features explain how they can affect the core functionality of our project. The metric of finger travel distance has been reworded. Instead of using this specific metric, we explained the core problem using the number of required button presses. \\
 
-After receiving peer reviews, we revised our project proposal. Our peers stressed the risks of using Spotify API because of deprecations. We as a team, are aware of possible issues with this and have taken it into account with what we want for our software. Previews were also a main concern by our peers, considering the nature of how they work. They play an essential part in our project in helping the user determine if they would like to remove a song or not. In terms of the proposal itself, each team member has thought about how we word certain specifications and concepts to best fit our audience. We've also added diagram captions to better explain the figures in our proposal. We have taken both peer and professor advice and detailed the milestones for every week and separated them as backend and frontend milestones. As it was not clear before, we've also explained what each piece of technology clearly does and will provide for our project specifically.
+After receiving peer reviews, we revised our project proposal. Our peers stressed the risks of using Spotify API because of deprecations. We as a team, are aware of possible issues with this and have taken it into account with what we want for our software. Previews were also a main concern by our peers, considering the nature of how they work. They play an essential part in our project in helping the user determine if they would like to remove a song or not. In terms of the proposal itself, each team member has thought about how we word certain specifications and concepts to best fit our audience. We've also added diagram captions to better explain the figures in our proposal. We have taken both peer and professor advice and detailed the milestones for every week and separated them as backend and frontend milestones. As it was not clear before, we've also explained what each piece of technology clearly does and will provide for our project specifically.s
 
-
-
+\end{appendices}
 
 % \begin{figure}[h]
 %     \centering
