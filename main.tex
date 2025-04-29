@@ -476,8 +476,9 @@ Before beginning these tests, the participants had the use cases of our applicat
   \hline
   \small\textbf{Tester Name} & \small\textbf{Spotify Subscription} & \small\textbf{$\approx$ Spotify Time} & \small\textbf{$\approx$ SongSwipe Time} & \small\textbf{Spotify Time} & \small\textbf{SongSwipe Time} \\
   \hline
-  TesterA & Free User & 00:37:57 & 00:18:54 & $\leq$ 03:02:00 & 00:06:25 \\
+  TesterA & Free User & $\leq$ 03:02:00 & 00:18:54 & $\leq$ 03:05:45 & 00:06:25 \\
   TesterB & Spotify Premium & 00:37:57 & 00:18:54 & 00:42:05 & 00:13:38 \\
+  TesterC & Spotify Premium & 00:37:57 & 00:18:54 & 00:20:08 & 00:09:10 \\
   \hline
 \end{tabular}
 
@@ -506,7 +507,7 @@ Fig~\ref{fig:methodbstats}
 \subsection{Limitations}
 When it comes to testing, there will always be some form of limitations. In our project, to scope the most data we can get, we had all the members conduct their own testing with their own procedure, and by doing this,s we would have different results based on the guidelines in their respective procedures.
 
-Spotify limits the number of skips a free user can have, about 6 skips every hour. Tester A, who is a free user, attempted to conduct the test; it was too tedious and time-consuming so we decided to perform an approximation on how long it would take. After realizing free Spotify users exist, this demonstrates that our application will greatly reduce time consumption in the decision-making process as our users will only have to listen to the song for at most 15 seconds per song.
+Spotify limits the number of skips a free user can have, about 6 skips every hour. Tester A, who is a free user, attempted to conduct the test; it was too tedious and time-consuming so we decided to perform an approximation on how long it would take. Not only that, free users may come across ads every 2-5 songs which may last between 15-30 seconds. With all these factors, managing a playlist as a free user is very time consuming therefore it demonstrates that our application will greatly reduce time consumption in the decision-making process as our users will only have to listen to the song for at most 15 seconds per song.
     
 \begin{center}
     We calculated the Spotify approximation based on the amount of hours it will take to listen to the whole playlist from start to finish. We also deducted that a skip will approximately save a person 4 minutes as a song can range from 3-5 minutes, so 4 is the middle ground. \newline 
